@@ -1,9 +1,13 @@
 const Car = require(`./car`);
 const Dealership = require(`./dealership`);
+const Customer = require(`./customer`);
 
 const toyota = new Car("Toyota", 10000, "hybrid");
 const tesla = new Car("Tesla", 50000, "electric");
+
 const dealership = new Dealership("autotrader", 50);
+
+const customer = new Customer("Sujan", 100000);
 
 dealership.addCarToStock(toyota);
 // dealership.addCarToStock(tesla);
@@ -42,5 +46,8 @@ describe ('dealership', () => {
     });
 
 })
+
+
+
 
 

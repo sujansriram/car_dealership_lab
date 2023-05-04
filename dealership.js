@@ -29,4 +29,12 @@ Dealership.prototype.totalStockValue = function(){
     return totalValue;
 }
 
+Dealership.prototype.sellCar = function(customer, car){
+    if (customer.wallet >= car.price && this.currentStock.indexOf(car) >= 0){
+        customer.buyCar(car);
+        this.currentStock.splice(this.currentStock.indexOf, 1);
+    }
+    
+}
+
 module.exports = Dealership;
