@@ -9,7 +9,9 @@ Dealership.prototype.countStock = function(){
 }
 
 Dealership.prototype.addCarToStock = function(car){
-    this.currentStock.push(car);
+    if (this.currentStock.length < this.maxStock){
+        this.currentStock.push(car);
+    }
 }
 
 Dealership.prototype.manufacturers = function(){
@@ -18,7 +20,7 @@ Dealership.prototype.manufacturers = function(){
 }
 
 Dealership.prototype.getCarsByManufacturer = function(manufacturerName){
-    const carsByManufacturer = this.currentStock.map(car => car.manufacturer === manufacturerName);
+    const carsByManufacturer = this.currentStock.filter(car => car.manufacturer === manufacturerName);
     return carsByManufacturer;
 }
 
@@ -27,4 +29,4 @@ Dealership.prototype.totalStockValue = function(){
     return totalValue;
 }
 
-module.exports = Car;
+module.exports = Dealership;
